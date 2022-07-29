@@ -80,6 +80,7 @@ h3 {
 
 footer > p {
     font-size: 2rem;
+    margin: 1rem;
 }
 
 
@@ -104,6 +105,7 @@ footer > p {
     -moz-box-shadow: 7px 6px 18px -7px rgba(0,0,0,0.75);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
+    background-color: #b526c0
 }
 
 .btn[disabled]:hover {

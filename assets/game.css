@@ -1,3 +1,5 @@
+/* Container for questions */
+
 .choice-container {
     display: flex;
     margin-bottom: 0.5rem;
@@ -19,7 +21,10 @@
     -moz-box-shadow: 7px 6px 18px -7px rgba(0,0,0,0.75);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
+    background-color: #b526c0;
 }
+
+/* Containers for choices */
 
 .choice-prefix {
     padding: 1.5rem 1.5rem;
@@ -28,8 +33,39 @@
 .choice-text {
     padding: 1.5rem;
     margin-left: 0rem;
+    width: 100%;
 }
 
 #question {
     margin-left: 10rem;
+}
+
+/* timer and high scores button */
+
+.nav {
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 1rem;
+    margin: 2rem;
+    width: 10rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white;
+    background-color: #5b0688;
+}
+
+.right {
+    float: right;
+}
+
+#scores:hover {
+    cursor: pointer;
+    box-shadow: 7px 6px 18px -7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 6px 18px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 6px 18px -7px rgba(0,0,0,0.75);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+    background-color: #b526c0
 }
