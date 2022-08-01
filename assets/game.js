@@ -4,8 +4,9 @@ var timerEl = document.getElementById('countdown');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
-let timer = '';
+let timeLeft = 44;
 let availableQuestions = [];
+
 
     // Question Objects //
 
@@ -63,13 +64,19 @@ getNewQuestion();
 
 getNewQuestion = () => {
 
-    //timer = 45;
 
     // send user to end screen if timer or questions run out //
 
-    if(availableQuestions.length === 0 || timer === 0){
-        return window.location.assign('/endscreen.html');
+    if(availableQuestions.length === 0 || timeLeft === 0){
+
+        localStorage.setItem('mostRecentScore', timeLeft);
+
+
+        return window.location.assign('endscreen.html');
     }
+
+        countdown.innerText = "time:" + timeLeft;
+
 
     // Randomly pulls questions & answers from the arrays and sets the text using the appropriate data numbers //
 
@@ -106,8 +113,8 @@ choices.forEach(choice => {
         }  
         
         if (applyClass == 'incorrect') {
-            timer -= 5;
-            timerEl.innerText = 'Time: ' + timer;
+            timeLeft -= 5;
+            timerEl.innerText = "-5" ;
         }
 
         selectedChoice.parentElement.classList.add(applyClass);
@@ -125,7 +132,6 @@ choices.forEach(choice => {
     // Countdown function to tick down the timer every second and also reduce time if the player answers incorrect //
 
 function countdown() {
-    var timeLeft = 44;
   
     var timeInterval = setInterval(function () {
       if (timeLeft > 1) {
@@ -136,7 +142,7 @@ function countdown() {
         timeLeft--;
       } else {
         clearInterval(timeInterval);
-        return window.location.assign('/endscreen.html');
+        return window.location.assign('endscreen.html');
       }
     }, 1000);
   }
