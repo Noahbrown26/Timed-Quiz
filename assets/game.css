@@ -69,3 +69,16 @@
     transition: transform 150ms;
     background-color: #b526c0
 }
+
+.correct,
+.correct:hover
+ {
+    background-color: #42e119;
+}
+
+
+.incorrect,
+.incorrect:hover
+ {
+    background-color: #dc3545;
+}

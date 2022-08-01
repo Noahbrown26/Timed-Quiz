@@ -4,7 +4,7 @@ var timerEl = document.getElementById('countdown');
 
 let currentQuestion = {};
 let acceptingAnswers = false;
-let timer = 45;
+let timer = '';
 let availableQuestions = [];
 
     // Question Objects //
@@ -55,7 +55,6 @@ let questions = [
 // Function that starts game//
 
 startGame = () => {
-timer = 45;
 availableQuestions = [...questions];
 getNewQuestion();
 };
@@ -63,6 +62,8 @@ getNewQuestion();
 // function that fetches new questions //
 
 getNewQuestion = () => {
+
+    //timer = 45;
 
     // send user to end screen if timer or questions run out //
 
@@ -95,10 +96,28 @@ choices.forEach(choice => {
         if(!acceptingAnswers) return;
 
         acceptingAnswers = false;
+        
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
+        let applyClass = 'incorrect';
+            if (selectedAnswer == currentQuestion.answer) {
+            applyClass = 'correct';
+        }  
+        
+        if (applyClass == 'incorrect') {
+            timer -= 5;
+            timerEl.innerText = 'Time: ' + timer;
+        }
+
+        selectedChoice.parentElement.classList.add(applyClass);
+        
+        setTimeout( () =>  {
+        selectedChoice.parentElement.classList.remove(applyClass);
         getNewQuestion();
+
+        }, 1000 );
+
     });
 });
 
