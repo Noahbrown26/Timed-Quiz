@@ -1,8 +1,5 @@
 # Timed-Quiz
 
-# Challenge-4
-
-
 This is the fourth challenge of my UW coding bootcamp curriculum.
 
 For this challenge, we had to follow the acceptance criteria to create a short timed quiz game with a set of rules
