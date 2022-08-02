@@ -9,7 +9,7 @@ const Max_Scores = 5;
 
 
 finalScore.innerText = mostRecentScore;
-;
+
 
 //finalScore.innerText = mostRecentScore;
 
